@@ -1,6 +1,8 @@
 #
 # Local vars
 #
+# These variables only exist within the context fo the terraform folder
+#
 
 locals {
   lambda_zip = "../../.aws-sam/build/lambda-1.0.0.zip"
@@ -8,6 +10,13 @@ locals {
 
 #
 # Provider
+#
+#   This block informs terraform what target cloud provider we're using.
+# We could target google cloud platform or azure if desired.
+#
+#   The `default_tags` section attaches these tags to all resources deployed
+# by this provider. This allows us to create many, many resources with
+# tags that indicate associated service or environment.
 #
 provider "aws" {
   region                  = var.aws_region
@@ -25,6 +34,12 @@ provider "aws" {
 
 #
 # Lambda Function Definition
+#
+#   Anything starting with keyword `resource` is something
+# that terraform manages (i.e. creates, modifies, destroys)
+#
+#   Note that resources can reference eachother in same folder.
+# E.g. role = aws_iam_role.lambda_role.arn
 #
 
 resource "aws_lambda_function" "lambda" {

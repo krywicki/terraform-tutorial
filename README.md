@@ -1,13 +1,34 @@
 # terraform-tutorial
 Basic Terraform Tutorial Project
 
+## Requirements
+
+* Linux/MacOS
+* SAM Cli
+* Makefile
+* python3.8
+* terraform
+* Docker
+* AWS Cli
+
 ## Overview
 
 This example covers various `terraform` core features and some gotchas that a developer may run into when building infrastructure in AWS.
 
-It is best to progress through the examples in the following order (from simplest to advanced).
+All of the examples make use of `AWS Lambda` code (written in python3.8) in the `src/` directory.
 
-1. [basic-example](./basic-example/README.md)
-2. [modules-example](./modules-example/README.md)
-3. [data-sources-example](./data-sources-example/README.md)
-4. [importing-resources-example](./importing-resources-example/README.md)
+## Examples
+
+* [terraform-basic-example](./terraform-basic-example/README.md)
+    * Covers
+        * Basic resource creation
+        * Validation
+        * Planning
+        * Deployment
+
+
+* [terraform-advanced-example](./terraform-advanced-example/README.md)
+    * Covers
+        * modules
+        * backends
+        * inputs/outputs

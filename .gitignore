@@ -33,3 +33,7 @@ env/
 .aws-sam/
 
 *.tfvars
+
+terraform-basic-example/terraform/.terraform.lock.hcl
+
+terraform-advanced-example/terraform/envs/test/eu-west-1/.terraform.lock.hcl
