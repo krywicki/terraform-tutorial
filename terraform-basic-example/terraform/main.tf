@@ -14,6 +14,13 @@ provider "aws" {
   s3_force_path_style     = true
   shared_credentials_file = "~/.aws/credentials"
   profile                 = var.aws_profile
+
+  default_tags {
+    tags = {
+      Environment = "example"
+      Service     = "terraform-example"
+    }
+  }
 }
 
 #
